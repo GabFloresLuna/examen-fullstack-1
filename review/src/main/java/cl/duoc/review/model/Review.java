@@ -1,7 +1,9 @@
 package cl.duoc.review.model;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,9 +22,13 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Review {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;                 
-    private Long destinationId;      
-    private Long userId;             
+    private Long id;    
+
+    @Column(name = "destination_id", columnDefinition = "BINARY(16)", nullable = false)
+    private UUID destinationId;
+
+    @Column(name = "user_id", columnDefinition = "BINARY(16)", nullable = false)
+    private UUID userId;             
     private Integer rating;          
     private String comment;
     private LocalDateTime createdAt;
