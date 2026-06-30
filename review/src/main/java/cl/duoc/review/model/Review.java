@@ -20,10 +20,10 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Review {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;                 // o UUID si prefieres
-    private Long destinationId;      // ID del destino (no relación JPA)
-    private Long userId;             // ID del usuario (no relación JPA)
-    private Integer rating;          // 1-5
+    private Long id;                 
+    private Long destinationId;      
+    private Long userId;             
+    private Integer rating;          
     private String comment;
     private LocalDateTime createdAt;
 }
