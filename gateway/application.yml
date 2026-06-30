@@ -30,6 +30,10 @@ spring:
             - Path=/api/v1/traveler/**
           filters:
             - RewritePath=/api/v1/(?<segment>.*), /api/v1/${segment}
+        - id: review
+          uri: lb://review
+          predicates:
+            - Path=/api/v1/reviews/**
 eureka:
   client:
     service-url:
