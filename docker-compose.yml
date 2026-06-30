@@ -1,0 +1,58 @@
+version: '3.8'
+services:
+  mysql_login:
+    image: mysql:8.0
+    container_name: mysql_login
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: login
+      MYSQL_USER: examen
+      MYSQL_PASSWORD: examen123
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql_login_data:/var/lib/mysql
+    deploy:
+          resources:
+            limits:
+              memory: 512M
+  mysql_destination:
+    image: mysql:8.0
+    container_name: mysql_destination
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: destination
+      MYSQL_USER: examen
+      MYSQL_PASSWORD: examen123
+    ports:
+      - "3311:3306"
+    volumes:
+      - mysql_destination_data:/var/lib/mysql
+    deploy:
+          resources:
+            limits:
+              memory: 512M
+  mysql_traveler:
+    image: mysql:8.0
+    container_name: mysql_traveler
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: traveler
+      MYSQL_USER: examen
+      MYSQL_PASSWORD: examen123
+    ports:
+      - "3312:3306"
+    volumes:
+      - mysql_traveler_data:/var/lib/mysql
+    deploy:
+          resources:
+            limits:
+              memory: 512M
+volumes:
+  mysql_login_data:
+  mysql_destination_data:
+  mysql_traveler_data:
+  

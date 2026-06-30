@@ -1,0 +1,1484 @@
+2026-06-29 12:09:40 - Starting TravelerApplication using Java 21.0.9 with PID 47772 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 12:09:40 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 12:09:40 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 12:09:41 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 12:09:41 - Finished Spring Data repository scanning in 74 ms. Found 2 JPA repository interfaces.
+2026-06-29 12:09:41 - BeanFactory id=57cf2c18-7215-3f3e-b472-730b1a3528cc
+2026-06-29 12:09:42 - Tomcat initialized with port 9001 (http)
+2026-06-29 12:09:42 - Starting service [Tomcat]
+2026-06-29 12:09:42 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 12:09:42 - Root WebApplicationContext: initialization completed in 1772 ms
+2026-06-29 12:09:42 - HikariPool-1 - Starting...
+2026-06-29 12:09:43 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Access denied for user 'examen'@'%' to database 'traveler'
+-----------------------------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1044
+Message    : Access denied for user 'examen'@'%' to database 'traveler'
+
+2026-06-29 12:09:43 - Stopping service [Tomcat]
+2026-06-29 12:09:43 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-29 12:09:43 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Access denied for user 'examen'@'%' to database 'traveler'
+-----------------------------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1044
+Message    : Access denied for user 'examen'@'%' to database 'traveler'
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at cl.duoc.traveler.TravelerApplication.main(TravelerApplication.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Access denied for user 'examen'@'%' to database 'traveler'
+-----------------------------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1044
+Message    : Access denied for user 'examen'@'%' to database 'traveler'
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 10 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Access denied for user 'examen'@'%' to database 'traveler'
+-----------------------------------------------------------------------------------------------------
+SQL State  : 42000
+Error Code : 1044
+Message    : Access denied for user 'examen'@'%' to database 'traveler'
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186)
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811)
+	... 17 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Access denied for user 'examen'@'%' to database 'traveler'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65)
+	... 23 common frames omitted
+2026-06-29 12:10:56 - Starting TravelerApplication using Java 21.0.9 with PID 23144 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 12:10:56 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 12:10:56 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 12:10:57 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 12:10:57 - Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
+2026-06-29 12:10:57 - BeanFactory id=57cf2c18-7215-3f3e-b472-730b1a3528cc
+2026-06-29 12:10:58 - Tomcat initialized with port 9001 (http)
+2026-06-29 12:10:58 - Starting service [Tomcat]
+2026-06-29 12:10:58 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 12:10:58 - Root WebApplicationContext: initialization completed in 1726 ms
+2026-06-29 12:10:58 - HikariPool-1 - Starting...
+2026-06-29 12:10:58 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@25c4f621
+2026-06-29 12:10:58 - HikariPool-1 - Start completed.
+2026-06-29 12:10:58 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 12:10:59 - Schema history table `traveler`.`flyway_schema_history` does not exist yet
+2026-06-29 12:10:59 - Successfully validated 1 migration (execution time 00:00.031s)
+2026-06-29 12:10:59 - Creating Schema History table `traveler`.`flyway_schema_history` ...
+2026-06-29 12:10:59 - Current version of schema `traveler`: << Empty Schema >>
+2026-06-29 12:10:59 - Migrating schema `traveler` to version "1 - create trips tables"
+2026-06-29 12:10:59 - Successfully applied 1 migration to schema `traveler`, now at version v1 (execution time 00:00.043s)
+2026-06-29 12:10:59 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 12:10:59 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 12:10:59 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 12:10:59 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 12:10:59 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 12:11:00 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 12:11:00 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 12:11:00 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 12:11:00 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tripController' defined in file [E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes\cl\duoc\traveler\controller\TripController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'tripService' defined in file [E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes\cl\duoc\traveler\service\TripService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'authService' defined in file [E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes\cl\duoc\traveler\service\AuthService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.springframework.web.reactive.function.client.WebClient$Builder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-06-29 12:11:00 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 12:11:00 - HikariPool-1 - Shutdown initiated...
+2026-06-29 12:11:00 - HikariPool-1 - Shutdown completed.
+2026-06-29 12:11:00 - Stopping service [Tomcat]
+2026-06-29 12:11:00 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-29 12:11:00 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in cl.duoc.traveler.service.AuthService required a bean of type 'org.springframework.web.reactive.function.client.WebClient$Builder' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.web.reactive.function.client.WebClient$Builder' in your configuration.
+
+2026-06-29 12:13:28 - Starting TravelerApplication using Java 21.0.9 with PID 36696 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 12:13:28 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 12:13:28 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 12:13:29 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 12:13:29 - Finished Spring Data repository scanning in 67 ms. Found 2 JPA repository interfaces.
+2026-06-29 12:13:30 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 12:13:30 - Tomcat initialized with port 9001 (http)
+2026-06-29 12:13:30 - Starting service [Tomcat]
+2026-06-29 12:13:30 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 12:13:30 - Root WebApplicationContext: initialization completed in 1912 ms
+2026-06-29 12:13:30 - HikariPool-1 - Starting...
+2026-06-29 12:13:31 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42028589
+2026-06-29 12:13:31 - HikariPool-1 - Start completed.
+2026-06-29 12:13:31 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 12:13:31 - Successfully validated 1 migration (execution time 00:00.025s)
+2026-06-29 12:13:31 - Current version of schema `traveler`: 1
+2026-06-29 12:13:31 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 12:13:31 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 12:13:31 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 12:13:31 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 12:13:31 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 12:13:31 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 12:13:32 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 12:13:32 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 12:13:32 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 12:13:32 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 12:13:32 - 
+
+Using generated security password: 15c874d4-220f-4867-a639-befc1a0321be
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 12:13:32 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 12:13:33 - Eureka HTTP Client uses RestClient.
+2026-06-29 12:13:33 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 12:13:33 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 12:13:33 - Setting initial instance status as: STARTING
+2026-06-29 12:13:33 - Initializing Eureka in region us-east-1
+2026-06-29 12:13:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:13:33 - Disable delta property : false
+2026-06-29 12:13:33 - Single vip registry refresh property : null
+2026-06-29 12:13:33 - Force full registry fetch : false
+2026-06-29 12:13:33 - Application is null : false
+2026-06-29 12:13:33 - Registered Applications size is zero : true
+2026-06-29 12:13:33 - Application version is -1: true
+2026-06-29 12:13:33 - Getting all instance registry info from the eureka server
+2026-06-29 12:13:33 - The response status is 200
+2026-06-29 12:13:33 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 12:13:33 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 12:13:33 - Discovery Client initialized at timestamp 1782749613599 with initial instances count: 2
+2026-06-29 12:13:33 - Registering application TRAVELER with eureka with status UP
+2026-06-29 12:13:33 - Saw local status change event StatusChangeEvent [timestamp=1782749613602, current=UP, previous=STARTING]
+2026-06-29 12:13:33 - DiscoveryClient_TRAVELER/demianbelial:traveler:9001: registering service...
+2026-06-29 12:13:33 - Unregistering application TRAVELER with eureka with status DOWN
+2026-06-29 12:13:33 - DiscoveryClient_TRAVELER/demianbelial:traveler:9001 - registration status: 204
+2026-06-29 12:13:33 - Saw local status change event StatusChangeEvent [timestamp=1782749613626, current=DOWN, previous=UP]
+2026-06-29 12:13:33 - DiscoveryClient_TRAVELER/demianbelial:traveler:9001: registering service...
+2026-06-29 12:13:33 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-06-29 12:13:33 - DiscoveryClient_TRAVELER/demianbelial:traveler:9001 - registration status: 204
+2026-06-29 12:13:33 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 12:13:33 - HikariPool-1 - Shutdown initiated...
+2026-06-29 12:13:33 - HikariPool-1 - Shutdown completed.
+2026-06-29 12:13:33 - Shutting down DiscoveryClient ...
+2026-06-29 12:13:36 - Unregistering ...
+2026-06-29 12:13:36 - DiscoveryClient_TRAVELER/demianbelial:traveler:9001 - deregister  status: 200
+2026-06-29 12:13:36 - Completed shut down of DiscoveryClient
+2026-06-29 12:13:36 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-29 12:13:36 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9001 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9001 or configure this application to listen on another port.
+
+2026-06-29 12:14:28 - Starting TravelerApplication using Java 21.0.9 with PID 7784 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 12:14:28 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 12:14:28 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 12:14:29 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 12:14:29 - Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2026-06-29 12:14:30 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 12:14:30 - Tomcat initialized with port 9002 (http)
+2026-06-29 12:14:30 - Starting service [Tomcat]
+2026-06-29 12:14:30 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 12:14:30 - Root WebApplicationContext: initialization completed in 1982 ms
+2026-06-29 12:14:31 - HikariPool-1 - Starting...
+2026-06-29 12:14:31 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6cb3463b
+2026-06-29 12:14:31 - HikariPool-1 - Start completed.
+2026-06-29 12:14:31 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 12:14:31 - Successfully validated 1 migration (execution time 00:00.030s)
+2026-06-29 12:14:31 - Current version of schema `traveler`: 1
+2026-06-29 12:14:31 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 12:14:31 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 12:14:31 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 12:14:32 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 12:14:32 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 12:14:32 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 12:14:32 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 12:14:32 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 12:14:32 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 12:14:32 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 12:14:32 - 
+
+Using generated security password: 896f7963-20c2-4f0c-b512-cbf06263998e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 12:14:32 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 12:14:33 - Eureka HTTP Client uses RestClient.
+2026-06-29 12:14:33 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 12:14:33 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 12:14:33 - Setting initial instance status as: STARTING
+2026-06-29 12:14:33 - Initializing Eureka in region us-east-1
+2026-06-29 12:14:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:14:33 - Disable delta property : false
+2026-06-29 12:14:33 - Single vip registry refresh property : null
+2026-06-29 12:14:33 - Force full registry fetch : false
+2026-06-29 12:14:33 - Application is null : false
+2026-06-29 12:14:33 - Registered Applications size is zero : true
+2026-06-29 12:14:33 - Application version is -1: true
+2026-06-29 12:14:33 - Getting all instance registry info from the eureka server
+2026-06-29 12:14:33 - The response status is 200
+2026-06-29 12:14:33 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 12:14:33 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 12:14:33 - Discovery Client initialized at timestamp 1782749673873 with initial instances count: 2
+2026-06-29 12:14:33 - Registering application TRAVELER with eureka with status UP
+2026-06-29 12:14:33 - Saw local status change event StatusChangeEvent [timestamp=1782749673876, current=UP, previous=STARTING]
+2026-06-29 12:14:33 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 12:14:33 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 12:14:33 - Updating port to 9002
+2026-06-29 12:14:33 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 12:14:33 - Started TravelerApplication in 5.534 seconds (process running for 6.026)
+2026-06-29 12:14:33 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 12:14:33 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 12:14:34 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 12:14:34 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 12:14:34 - Completed initialization in 1 ms
+2026-06-29 12:19:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:24:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:29:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:34:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:39:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:44:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:49:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:54:33 - Resolving eureka endpoints via configuration
+2026-06-29 12:59:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:04:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:09:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:14:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:19:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:24:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:29:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:34:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:39:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:44:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:49:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:54:33 - Resolving eureka endpoints via configuration
+2026-06-29 13:59:33 - Resolving eureka endpoints via configuration
+2026-06-29 14:04:33 - Resolving eureka endpoints via configuration
+2026-06-29 14:09:33 - Resolving eureka endpoints via configuration
+2026-06-29 14:14:33 - Resolving eureka endpoints via configuration
+2026-06-29 14:19:33 - Resolving eureka endpoints via configuration
+2026-06-29 14:24:33 - Resolving eureka endpoints via configuration
+2026-06-29 14:29:33 - Resolving eureka endpoints via configuration
+2026-06-29 14:34:33 - Resolving eureka endpoints via configuration
+2026-06-29 14:38:02 - Starting TravelerApplication using Java 21.0.9 with PID 14232 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 14:38:02 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 14:38:02 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 14:38:03 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 14:38:03 - Finished Spring Data repository scanning in 67 ms. Found 2 JPA repository interfaces.
+2026-06-29 14:38:03 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 14:38:04 - Tomcat initialized with port 9002 (http)
+2026-06-29 14:38:04 - Starting service [Tomcat]
+2026-06-29 14:38:04 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 14:38:04 - Root WebApplicationContext: initialization completed in 1949 ms
+2026-06-29 14:38:04 - HikariPool-1 - Starting...
+2026-06-29 14:38:04 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33bd9ac3
+2026-06-29 14:38:04 - HikariPool-1 - Start completed.
+2026-06-29 14:38:04 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 14:38:05 - Successfully validated 1 migration (execution time 00:00.029s)
+2026-06-29 14:38:05 - Current version of schema `traveler`: 1
+2026-06-29 14:38:05 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 14:38:05 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 14:38:05 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 14:38:05 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 14:38:05 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 14:38:05 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 14:38:06 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 14:38:06 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 14:38:06 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 14:38:06 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 14:38:06 - 
+
+Using generated security password: eb73e2bd-6d67-49b9-94ed-4c922d427535
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 14:38:06 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 14:38:06 - Eureka HTTP Client uses RestClient.
+2026-06-29 14:38:07 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 14:38:07 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 14:38:07 - Setting initial instance status as: STARTING
+2026-06-29 14:38:07 - Initializing Eureka in region us-east-1
+2026-06-29 14:38:07 - Resolving eureka endpoints via configuration
+2026-06-29 14:38:07 - Disable delta property : false
+2026-06-29 14:38:07 - Single vip registry refresh property : null
+2026-06-29 14:38:07 - Force full registry fetch : false
+2026-06-29 14:38:07 - Application is null : false
+2026-06-29 14:38:07 - Registered Applications size is zero : true
+2026-06-29 14:38:07 - Application version is -1: true
+2026-06-29 14:38:07 - Getting all instance registry info from the eureka server
+2026-06-29 14:38:07 - The response status is 200
+2026-06-29 14:38:07 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 14:38:07 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 14:38:07 - Discovery Client initialized at timestamp 1782758287264 with initial instances count: 3
+2026-06-29 14:38:07 - Registering application TRAVELER with eureka with status UP
+2026-06-29 14:38:07 - Saw local status change event StatusChangeEvent [timestamp=1782758287268, current=UP, previous=STARTING]
+2026-06-29 14:38:07 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 14:38:07 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 14:38:07 - Updating port to 9002
+2026-06-29 14:38:07 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 14:38:07 - Started TravelerApplication in 5.525 seconds (process running for 6.021)
+2026-06-29 14:38:07 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 14:38:07 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 14:38:08 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 14:38:08 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 14:38:08 - Completed initialization in 1 ms
+2026-06-29 14:41:07 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:859)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getApplicationsInternal(RestClientEurekaHttpClient.java:201)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getDelta(RestClientEurekaHttpClient.java:142)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1474)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:690)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:226)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 25 more
+
+2026-06-29 14:41:07 - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-06-29 14:41:07 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:859)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getApplicationsInternal(RestClientEurekaHttpClient.java:201)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getDelta(RestClientEurekaHttpClient.java:142)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1474)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:690)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:226)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 26 more
+
+2026-06-29 14:41:07 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/TRAVELER/demianbelial:traveler:9002": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/TRAVELER/demianbelial:traveler:9002": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:859)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.sendHeartBeat(RestClientEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1403)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:690)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:226)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 22 more
+
+2026-06-29 14:41:07 - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-06-29 14:41:07 - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/TRAVELER/demianbelial:traveler:9002": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-06-29 14:41:07 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1474)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2026-06-29 14:41:07 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/TRAVELER/demianbelial:traveler:9002": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/TRAVELER/demianbelial:traveler:9002": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:859)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.sendHeartBeat(RestClientEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1403)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:690)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:226)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:168)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 23 more
+
+2026-06-29 14:41:07 - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/TRAVELER/demianbelial:traveler:9002": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-06-29 14:41:07 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1403)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-06-29 15:03:35 - Starting TravelerApplication using Java 21.0.9 with PID 48232 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:03:35 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:03:35 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:03:36 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 15:03:36 - Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
+2026-06-29 15:03:36 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 15:03:37 - Tomcat initialized with port 9002 (http)
+2026-06-29 15:03:37 - Starting service [Tomcat]
+2026-06-29 15:03:37 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 15:03:37 - Root WebApplicationContext: initialization completed in 1931 ms
+2026-06-29 15:03:37 - HikariPool-1 - Starting...
+2026-06-29 15:03:37 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@fc21ff4
+2026-06-29 15:03:37 - HikariPool-1 - Start completed.
+2026-06-29 15:03:37 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 15:03:38 - Successfully validated 1 migration (execution time 00:00.021s)
+2026-06-29 15:03:38 - Current version of schema `traveler`: 1
+2026-06-29 15:03:38 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 15:03:38 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 15:03:38 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 15:03:38 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 15:03:38 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 15:03:38 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 15:03:39 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 15:03:39 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 15:03:39 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 15:03:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 15:03:39 - 
+
+Using generated security password: 28387270-d626-458c-9b6d-3ffd8e4f2540
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 15:03:39 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 15:03:40 - Eureka HTTP Client uses RestClient.
+2026-06-29 15:03:40 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 15:03:40 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 15:03:40 - Setting initial instance status as: STARTING
+2026-06-29 15:03:40 - Initializing Eureka in region us-east-1
+2026-06-29 15:03:40 - Resolving eureka endpoints via configuration
+2026-06-29 15:03:40 - Disable delta property : false
+2026-06-29 15:03:40 - Single vip registry refresh property : null
+2026-06-29 15:03:40 - Force full registry fetch : false
+2026-06-29 15:03:40 - Application is null : false
+2026-06-29 15:03:40 - Registered Applications size is zero : true
+2026-06-29 15:03:40 - Application version is -1: true
+2026-06-29 15:03:40 - Getting all instance registry info from the eureka server
+2026-06-29 15:03:40 - The response status is 200
+2026-06-29 15:03:40 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 15:03:40 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 15:03:40 - Discovery Client initialized at timestamp 1782759820336 with initial instances count: 2
+2026-06-29 15:03:40 - Registering application TRAVELER with eureka with status UP
+2026-06-29 15:03:40 - Saw local status change event StatusChangeEvent [timestamp=1782759820339, current=UP, previous=STARTING]
+2026-06-29 15:03:40 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 15:03:40 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 15:03:40 - Updating port to 9002
+2026-06-29 15:03:40 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 15:03:40 - Started TravelerApplication in 5.543 seconds (process running for 6.054)
+2026-06-29 15:03:40 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 15:03:40 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 15:03:41 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 15:03:41 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 15:03:41 - Completed initialization in 1 ms
+2026-06-29 15:08:40 - Resolving eureka endpoints via configuration
+2026-06-29 15:12:12 - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/plain;charset=UTF-8' is not supported]
+2026-06-29 15:12:52 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.UUID` from String "{{userId}}": UUID has to be represented by standard 36-char representation]
+2026-06-29 15:13:40 - Resolving eureka endpoints via configuration
+2026-06-29 15:18:40 - Resolving eureka endpoints via configuration
+2026-06-29 15:24:01 - Starting TravelerApplication using Java 21.0.9 with PID 31388 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:24:01 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:24:01 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:24:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 15:24:02 - Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
+2026-06-29 15:24:03 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 15:24:03 - Tomcat initialized with port 9002 (http)
+2026-06-29 15:24:03 - Starting service [Tomcat]
+2026-06-29 15:24:03 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 15:24:03 - Root WebApplicationContext: initialization completed in 1725 ms
+2026-06-29 15:24:03 - HikariPool-1 - Starting...
+2026-06-29 15:24:04 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b9dc62f
+2026-06-29 15:24:04 - HikariPool-1 - Start completed.
+2026-06-29 15:24:04 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 15:24:04 - Successfully validated 1 migration (execution time 00:00.033s)
+2026-06-29 15:24:04 - Current version of schema `traveler`: 1
+2026-06-29 15:24:04 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 15:24:04 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 15:24:04 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 15:24:04 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 15:24:04 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 15:24:04 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 15:24:05 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 15:24:05 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 15:24:05 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 15:24:05 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 15:24:05 - 
+
+Using generated security password: b972c6dd-4208-4a81-8d98-5e1da2702191
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 15:24:05 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 15:24:06 - Eureka HTTP Client uses RestClient.
+2026-06-29 15:24:06 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 15:24:06 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 15:24:06 - Setting initial instance status as: STARTING
+2026-06-29 15:24:06 - Initializing Eureka in region us-east-1
+2026-06-29 15:24:06 - Resolving eureka endpoints via configuration
+2026-06-29 15:24:06 - Disable delta property : false
+2026-06-29 15:24:06 - Single vip registry refresh property : null
+2026-06-29 15:24:06 - Force full registry fetch : false
+2026-06-29 15:24:06 - Application is null : false
+2026-06-29 15:24:06 - Registered Applications size is zero : true
+2026-06-29 15:24:06 - Application version is -1: true
+2026-06-29 15:24:06 - Getting all instance registry info from the eureka server
+2026-06-29 15:24:06 - The response status is 200
+2026-06-29 15:24:06 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 15:24:06 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 15:24:06 - Discovery Client initialized at timestamp 1782761046693 with initial instances count: 3
+2026-06-29 15:24:06 - Registering application TRAVELER with eureka with status UP
+2026-06-29 15:24:06 - Saw local status change event StatusChangeEvent [timestamp=1782761046696, current=UP, previous=STARTING]
+2026-06-29 15:24:06 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 15:24:06 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 15:24:06 - Updating port to 9002
+2026-06-29 15:24:06 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 15:24:06 - Started TravelerApplication in 5.416 seconds (process running for 5.935)
+2026-06-29 15:24:06 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 15:24:06 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 15:24:07 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 15:24:07 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 15:24:07 - Completed initialization in 2 ms
+2026-06-29 15:29:06 - Resolving eureka endpoints via configuration
+2026-06-29 15:33:28 - Starting TravelerApplication using Java 21.0.9 with PID 16556 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:33:28 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:33:28 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:33:29 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 15:33:29 - Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2026-06-29 15:33:30 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 15:33:30 - Tomcat initialized with port 9002 (http)
+2026-06-29 15:33:30 - Starting service [Tomcat]
+2026-06-29 15:33:30 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 15:33:30 - Root WebApplicationContext: initialization completed in 1950 ms
+2026-06-29 15:33:31 - HikariPool-1 - Starting...
+2026-06-29 15:33:31 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b9dc62f
+2026-06-29 15:33:31 - HikariPool-1 - Start completed.
+2026-06-29 15:33:31 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 15:33:31 - Successfully validated 1 migration (execution time 00:00.021s)
+2026-06-29 15:33:31 - Current version of schema `traveler`: 1
+2026-06-29 15:33:31 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 15:33:31 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 15:33:31 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 15:33:32 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 15:33:32 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 15:33:32 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 15:33:32 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 15:33:32 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 15:33:32 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 15:33:32 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 15:33:33 - 
+
+Using generated security password: e581ce12-9be8-4b7a-ace4-101bbc8e0081
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 15:33:33 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 15:33:33 - Eureka HTTP Client uses RestClient.
+2026-06-29 15:33:33 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 15:33:33 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 15:33:33 - Setting initial instance status as: STARTING
+2026-06-29 15:33:33 - Initializing Eureka in region us-east-1
+2026-06-29 15:33:33 - Resolving eureka endpoints via configuration
+2026-06-29 15:33:33 - Disable delta property : false
+2026-06-29 15:33:33 - Single vip registry refresh property : null
+2026-06-29 15:33:33 - Force full registry fetch : false
+2026-06-29 15:33:33 - Application is null : false
+2026-06-29 15:33:33 - Registered Applications size is zero : true
+2026-06-29 15:33:33 - Application version is -1: true
+2026-06-29 15:33:33 - Getting all instance registry info from the eureka server
+2026-06-29 15:33:34 - The response status is 200
+2026-06-29 15:33:34 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 15:33:34 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 15:33:34 - Discovery Client initialized at timestamp 1782761614018 with initial instances count: 3
+2026-06-29 15:33:34 - Registering application TRAVELER with eureka with status UP
+2026-06-29 15:33:34 - Saw local status change event StatusChangeEvent [timestamp=1782761614020, current=UP, previous=STARTING]
+2026-06-29 15:33:34 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 15:33:34 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 15:33:34 - Updating port to 9002
+2026-06-29 15:33:34 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 15:33:34 - Started TravelerApplication in 5.606 seconds (process running for 6.121)
+2026-06-29 15:33:34 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 15:33:34 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 15:33:34 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 15:33:34 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 15:33:34 - Completed initialization in 1 ms
+2026-06-29 15:38:33 - Resolving eureka endpoints via configuration
+2026-06-29 15:39:05 - Starting TravelerApplication using Java 21.0.9 with PID 34296 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:39:05 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:39:05 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:39:05 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [cl.duoc.traveler.TravelerApplication]
+2026-06-29 15:39:06 - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [cl.duoc.traveler.TravelerApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:452)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:316)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:795)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:603)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at cl.duoc.traveler.TravelerApplication.main(TravelerApplication.java:10)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'tripService' for bean class [cl.duoc.traveler.service.TripService] conflicts with existing, non-compatible bean definition of same name and class [cl.duoc.traveler.controller.TripService]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:363)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:290)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:349)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:285)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
+	... 13 common frames omitted
+2026-06-29 15:39:15 - Starting TravelerApplication using Java 21.0.9 with PID 39072 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:39:15 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:39:15 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:39:15 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [cl.duoc.traveler.TravelerApplication]
+2026-06-29 15:39:15 - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [cl.duoc.traveler.TravelerApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:452)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:316)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:795)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:603)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at cl.duoc.traveler.TravelerApplication.main(TravelerApplication.java:10)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'tripService' for bean class [cl.duoc.traveler.service.TripService] conflicts with existing, non-compatible bean definition of same name and class [cl.duoc.traveler.controller.TripService]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:363)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:290)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:349)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:285)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
+	... 13 common frames omitted
+2026-06-29 15:41:10 - Starting TravelerApplication using Java 21.0.9 with PID 34480 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:41:10 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:41:10 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:41:11 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 15:41:11 - Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2026-06-29 15:41:11 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 15:41:11 - Tomcat initialized with port 9002 (http)
+2026-06-29 15:41:11 - Starting service [Tomcat]
+2026-06-29 15:41:11 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 15:41:11 - Root WebApplicationContext: initialization completed in 1877 ms
+2026-06-29 15:41:12 - HikariPool-1 - Starting...
+2026-06-29 15:41:12 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6cb3463b
+2026-06-29 15:41:12 - HikariPool-1 - Start completed.
+2026-06-29 15:41:12 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 15:41:12 - Successfully validated 1 migration (execution time 00:00.029s)
+2026-06-29 15:41:12 - Current version of schema `traveler`: 1
+2026-06-29 15:41:12 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 15:41:12 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 15:41:13 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 15:41:13 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 15:41:13 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 15:41:13 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 15:41:13 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 15:41:13 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 15:41:13 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 15:41:14 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 15:41:14 - 
+
+Using generated security password: b0bcbf93-a491-48c4-adad-bc9eedc13145
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 15:41:14 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 15:41:14 - Eureka HTTP Client uses RestClient.
+2026-06-29 15:41:14 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 15:41:14 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 15:41:14 - Setting initial instance status as: STARTING
+2026-06-29 15:41:14 - Initializing Eureka in region us-east-1
+2026-06-29 15:41:14 - Resolving eureka endpoints via configuration
+2026-06-29 15:41:14 - Disable delta property : false
+2026-06-29 15:41:14 - Single vip registry refresh property : null
+2026-06-29 15:41:14 - Force full registry fetch : false
+2026-06-29 15:41:14 - Application is null : false
+2026-06-29 15:41:14 - Registered Applications size is zero : true
+2026-06-29 15:41:14 - Application version is -1: true
+2026-06-29 15:41:14 - Getting all instance registry info from the eureka server
+2026-06-29 15:41:15 - The response status is 200
+2026-06-29 15:41:15 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 15:41:15 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 15:41:15 - Discovery Client initialized at timestamp 1782762075057 with initial instances count: 3
+2026-06-29 15:41:15 - Registering application TRAVELER with eureka with status UP
+2026-06-29 15:41:15 - Saw local status change event StatusChangeEvent [timestamp=1782762075059, current=UP, previous=STARTING]
+2026-06-29 15:41:15 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 15:41:15 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 15:41:15 - Updating port to 9002
+2026-06-29 15:41:15 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 15:41:15 - Started TravelerApplication in 5.465 seconds (process running for 5.98)
+2026-06-29 15:41:15 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 15:41:15 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 15:41:15 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 15:41:15 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 15:41:15 - Completed initialization in 1 ms
+2026-06-29 15:43:19 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: Viaje no encontrado] with root cause
+java.lang.IllegalArgumentException: Viaje no encontrado
+	at cl.duoc.traveler.service.TripDetailsService.lambda$1(TripDetailsService.java:69)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at cl.duoc.traveler.service.TripDetailsService.getDetailsByTrip(TripDetailsService.java:69)
+	at cl.duoc.traveler.controller.TripDetailsController.getDetailsByTrip(TripDetailsController.java:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:493)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:354)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:86)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:132)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at cl.duoc.traveler.config.TokenValidationFilter.doFilterInternal(TokenValidationFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:244)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:337)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:141)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-06-29 15:46:14 - Resolving eureka endpoints via configuration
+2026-06-29 15:48:49 - Starting TravelerApplication using Java 21.0.9 with PID 8380 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:48:49 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:48:49 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:48:50 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 15:48:50 - Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2026-06-29 15:48:51 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 15:48:51 - Tomcat initialized with port 9002 (http)
+2026-06-29 15:48:51 - Starting service [Tomcat]
+2026-06-29 15:48:51 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 15:48:51 - Root WebApplicationContext: initialization completed in 1962 ms
+2026-06-29 15:48:52 - HikariPool-1 - Starting...
+2026-06-29 15:48:52 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@556843a5
+2026-06-29 15:48:52 - HikariPool-1 - Start completed.
+2026-06-29 15:48:52 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 15:48:52 - Successfully validated 1 migration (execution time 00:00.027s)
+2026-06-29 15:48:52 - Current version of schema `traveler`: 1
+2026-06-29 15:48:52 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 15:48:52 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 15:48:53 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 15:48:53 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 15:48:53 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 15:48:53 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 15:48:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 15:48:53 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 15:48:53 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 15:48:54 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 15:48:54 - 
+
+Using generated security password: 4a299edd-bede-4e5e-a591-fc9a46844c95
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 15:48:54 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 15:48:54 - Eureka HTTP Client uses RestClient.
+2026-06-29 15:48:54 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 15:48:54 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 15:48:54 - Setting initial instance status as: STARTING
+2026-06-29 15:48:54 - Initializing Eureka in region us-east-1
+2026-06-29 15:48:54 - Resolving eureka endpoints via configuration
+2026-06-29 15:48:54 - Disable delta property : false
+2026-06-29 15:48:54 - Single vip registry refresh property : null
+2026-06-29 15:48:54 - Force full registry fetch : false
+2026-06-29 15:48:54 - Application is null : false
+2026-06-29 15:48:54 - Registered Applications size is zero : true
+2026-06-29 15:48:54 - Application version is -1: true
+2026-06-29 15:48:54 - Getting all instance registry info from the eureka server
+2026-06-29 15:48:55 - The response status is 200
+2026-06-29 15:48:55 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 15:48:55 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 15:48:55 - Discovery Client initialized at timestamp 1782762535073 with initial instances count: 0
+2026-06-29 15:48:55 - Registering application TRAVELER with eureka with status UP
+2026-06-29 15:48:55 - Saw local status change event StatusChangeEvent [timestamp=1782762535077, current=UP, previous=STARTING]
+2026-06-29 15:48:55 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 15:48:55 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 15:48:55 - Updating port to 9002
+2026-06-29 15:48:55 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 15:48:55 - Started TravelerApplication in 5.554 seconds (process running for 6.039)
+2026-06-29 15:48:55 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 15:48:55 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 15:48:55 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 15:48:55 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 15:48:55 - Completed initialization in 0 ms
+2026-06-29 15:52:12 - Starting TravelerApplication using Java 21.0.9 with PID 15552 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:52:12 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:52:12 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:52:13 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 15:52:13 - Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2026-06-29 15:52:13 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 15:52:14 - Tomcat initialized with port 9002 (http)
+2026-06-29 15:52:14 - Starting service [Tomcat]
+2026-06-29 15:52:14 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 15:52:14 - Root WebApplicationContext: initialization completed in 1999 ms
+2026-06-29 15:52:14 - HikariPool-1 - Starting...
+2026-06-29 15:52:14 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50f6ecab
+2026-06-29 15:52:14 - HikariPool-1 - Start completed.
+2026-06-29 15:52:15 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 15:52:15 - Successfully validated 1 migration (execution time 00:00.031s)
+2026-06-29 15:52:15 - Current version of schema `traveler`: 1
+2026-06-29 15:52:15 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 15:52:15 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 15:52:15 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 15:52:15 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 15:52:15 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 15:52:15 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 15:52:16 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 15:52:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 15:52:16 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 15:52:16 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 15:52:16 - 
+
+Using generated security password: 18f4f480-e513-4835-ae3a-d41705d85127
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 15:52:16 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 15:52:17 - Eureka HTTP Client uses RestClient.
+2026-06-29 15:52:17 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 15:52:17 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 15:52:17 - Setting initial instance status as: STARTING
+2026-06-29 15:52:17 - Initializing Eureka in region us-east-1
+2026-06-29 15:52:17 - Resolving eureka endpoints via configuration
+2026-06-29 15:52:17 - Disable delta property : false
+2026-06-29 15:52:17 - Single vip registry refresh property : null
+2026-06-29 15:52:17 - Force full registry fetch : false
+2026-06-29 15:52:17 - Application is null : false
+2026-06-29 15:52:17 - Registered Applications size is zero : true
+2026-06-29 15:52:17 - Application version is -1: true
+2026-06-29 15:52:17 - Getting all instance registry info from the eureka server
+2026-06-29 15:52:17 - The response status is 200
+2026-06-29 15:52:17 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 15:52:17 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 15:52:17 - Discovery Client initialized at timestamp 1782762737536 with initial instances count: 0
+2026-06-29 15:52:17 - Registering application TRAVELER with eureka with status UP
+2026-06-29 15:52:17 - Saw local status change event StatusChangeEvent [timestamp=1782762737540, current=UP, previous=STARTING]
+2026-06-29 15:52:17 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 15:52:17 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 15:52:17 - Updating port to 9002
+2026-06-29 15:52:17 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 15:52:17 - Started TravelerApplication in 5.644 seconds (process running for 6.138)
+2026-06-29 15:52:17 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 15:52:17 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 15:52:18 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 15:52:18 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 15:52:18 - Completed initialization in 1 ms
+2026-06-29 15:52:47 - Disable delta property : false
+2026-06-29 15:52:47 - Single vip registry refresh property : null
+2026-06-29 15:52:47 - Force full registry fetch : false
+2026-06-29 15:52:47 - Application is null : false
+2026-06-29 15:52:47 - Registered Applications size is zero : true
+2026-06-29 15:52:47 - Application version is -1: false
+2026-06-29 15:52:47 - Getting all instance registry info from the eureka server
+2026-06-29 15:52:47 - The response status is 200
+2026-06-29 15:57:14 - Starting TravelerApplication using Java 21.0.9 with PID 35468 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:57:14 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:57:14 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:57:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 15:57:15 - Finished Spring Data repository scanning in 68 ms. Found 2 JPA repository interfaces.
+2026-06-29 15:57:15 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 15:57:16 - Tomcat initialized with port 9002 (http)
+2026-06-29 15:57:16 - Starting service [Tomcat]
+2026-06-29 15:57:16 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 15:57:16 - Root WebApplicationContext: initialization completed in 1790 ms
+2026-06-29 15:57:16 - HikariPool-1 - Starting...
+2026-06-29 15:57:16 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67e1a5fd
+2026-06-29 15:57:16 - HikariPool-1 - Start completed.
+2026-06-29 15:57:16 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 15:57:17 - Successfully validated 1 migration (execution time 00:00.025s)
+2026-06-29 15:57:17 - Current version of schema `traveler`: 1
+2026-06-29 15:57:17 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 15:57:17 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 15:57:17 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 15:57:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 15:57:17 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 15:57:17 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 15:57:18 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 15:57:18 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 15:57:18 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 15:57:18 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 15:57:18 - 
+
+Using generated security password: 8eb6aa4e-79d5-4b11-acb7-35d588a6a4a2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 15:57:18 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 15:57:19 - Eureka HTTP Client uses RestClient.
+2026-06-29 15:57:19 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 15:57:19 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 15:57:19 - Setting initial instance status as: STARTING
+2026-06-29 15:57:19 - Initializing Eureka in region us-east-1
+2026-06-29 15:57:19 - Resolving eureka endpoints via configuration
+2026-06-29 15:57:19 - Disable delta property : false
+2026-06-29 15:57:19 - Single vip registry refresh property : null
+2026-06-29 15:57:19 - Force full registry fetch : false
+2026-06-29 15:57:19 - Application is null : false
+2026-06-29 15:57:19 - Registered Applications size is zero : true
+2026-06-29 15:57:19 - Application version is -1: true
+2026-06-29 15:57:19 - Getting all instance registry info from the eureka server
+2026-06-29 15:57:19 - The response status is 200
+2026-06-29 15:57:19 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 15:57:19 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 15:57:19 - Discovery Client initialized at timestamp 1782763039309 with initial instances count: 0
+2026-06-29 15:57:19 - Registering application TRAVELER with eureka with status UP
+2026-06-29 15:57:19 - Saw local status change event StatusChangeEvent [timestamp=1782763039312, current=UP, previous=STARTING]
+2026-06-29 15:57:19 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 15:57:19 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 15:57:19 - Updating port to 9002
+2026-06-29 15:57:19 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 15:57:19 - Started TravelerApplication in 5.376 seconds (process running for 5.888)
+2026-06-29 15:57:19 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 15:57:19 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 15:57:35 - Starting TravelerApplication using Java 21.0.9 with PID 36712 (E:\DUOC UC\DSY1103\Examen Final\traveler\target\classes started by victo in E:\DUOC UC\DSY1103\Examen Final\traveler)
+2026-06-29 15:57:35 - Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-06-29 15:57:35 - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 15:57:36 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 15:57:36 - Finished Spring Data repository scanning in 68 ms. Found 2 JPA repository interfaces.
+2026-06-29 15:57:36 - BeanFactory id=bcf3484e-ad94-35b6-b9c4-42448149e16e
+2026-06-29 15:57:37 - Tomcat initialized with port 9002 (http)
+2026-06-29 15:57:37 - Starting service [Tomcat]
+2026-06-29 15:57:37 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-06-29 15:57:37 - Root WebApplicationContext: initialization completed in 1864 ms
+2026-06-29 15:57:37 - HikariPool-1 - Starting...
+2026-06-29 15:57:38 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6cb3463b
+2026-06-29 15:57:38 - HikariPool-1 - Start completed.
+2026-06-29 15:57:38 - Database: jdbc:mysql://localhost:3312/traveler (MySQL 8.0)
+2026-06-29 15:57:38 - Successfully validated 1 migration (execution time 00:00.022s)
+2026-06-29 15:57:38 - Current version of schema `traveler`: 1
+2026-06-29 15:57:38 - Schema `traveler` is up to date. No migration necessary.
+2026-06-29 15:57:38 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-29 15:57:38 - HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-06-29 15:57:38 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 15:57:38 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 15:57:38 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3312/traveler]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: traveler/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-29 15:57:39 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 15:57:39 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 15:57:39 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 15:57:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29 15:57:39 - 
+
+Using generated security password: 08c24516-3309-4522-86fe-c359295d5c23
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29 15:57:39 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-29 15:57:40 - Eureka HTTP Client uses RestClient.
+2026-06-29 15:57:40 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-29 15:57:40 - Exposing 2 endpoints beneath base path '/actuator'
+2026-06-29 15:57:40 - Setting initial instance status as: STARTING
+2026-06-29 15:57:40 - Initializing Eureka in region us-east-1
+2026-06-29 15:57:40 - Resolving eureka endpoints via configuration
+2026-06-29 15:57:40 - Disable delta property : false
+2026-06-29 15:57:40 - Single vip registry refresh property : null
+2026-06-29 15:57:40 - Force full registry fetch : false
+2026-06-29 15:57:40 - Application is null : false
+2026-06-29 15:57:40 - Registered Applications size is zero : true
+2026-06-29 15:57:40 - Application version is -1: true
+2026-06-29 15:57:40 - Getting all instance registry info from the eureka server
+2026-06-29 15:57:40 - The response status is 200
+2026-06-29 15:57:40 - Starting heartbeat executor: renew interval is: 30
+2026-06-29 15:57:40 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-29 15:57:40 - Discovery Client initialized at timestamp 1782763060509 with initial instances count: 3
+2026-06-29 15:57:40 - Registering application TRAVELER with eureka with status UP
+2026-06-29 15:57:40 - Saw local status change event StatusChangeEvent [timestamp=1782763060511, current=UP, previous=STARTING]
+2026-06-29 15:57:40 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002: registering service...
+2026-06-29 15:57:40 - Tomcat started on port 9002 (http) with context path '/'
+2026-06-29 15:57:40 - Updating port to 9002
+2026-06-29 15:57:40 - DiscoveryClient_TRAVELER/demianbelial:traveler:9002 - registration status: 204
+2026-06-29 15:57:40 - Started TravelerApplication in 5.382 seconds (process running for 5.895)
+2026-06-29 15:57:40 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-29 15:57:40 - SpringDoc /index.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-29 15:57:41 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 15:57:41 - Initializing Servlet 'dispatcherServlet'
+2026-06-29 15:57:41 - Completed initialization in 0 ms

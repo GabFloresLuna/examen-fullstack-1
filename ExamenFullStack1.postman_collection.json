@@ -1,0 +1,648 @@
+{
+  "info": {
+    "_postman_id": "8347d8ed-c0e7-4882-bafe-f7286a250f51",
+    "name": "ExamenFullStack1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6223948"
+  },
+  "item": [
+    {
+      "name": "LoginService",
+      "item": [
+        {
+          "name": "Registrar Nuevo Usuario",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"victor\",\r\n  \"password\": \"victor.123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9999/api/v1/users/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9999",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logearse",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"victor\",\r\n  \"password\": \"victor.123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:9999/api/v1/users/login",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "9999",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Validar Token",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:9999/api/v1/users/validate?token=",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "9999",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "validate"
+              ],
+              "query": [
+                {
+                  "key": "token",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DestinationService",
+      "item": [
+        {
+          "name": "Destinos",
+          "item": [
+            {
+              "name": "Listar todos los destinos",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/destination/destinations",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "destination",
+                    "destinations"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Obtener destino por ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/destinations/3b3f3937-73c9-11f1-b577-424dc013a170",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "destinations",
+                    "3b3f3937-73c9-11f1-b577-424dc013a170"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Verificar Destino",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/destinations/exists?id=3b3f3937-73c9-11f1-b577-424dc013a170",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "destinations",
+                    "exists"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "3b3f3937-73c9-11f1-b577-424dc013a170"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Crear destino",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Santiago\",\n  \"country\": \"Chile\",\n  \"description\": \"Capital de Chile\"\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/destinations",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "destinations"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Actualizar destino",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Valparaíso\",\n  \"country\": \"Chile\",\n  \"description\": \"Ciudad portuaria\"\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/destinations/{{destinationId}}",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "destinations",
+                    "{{destinationId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Eliminar destino",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/destinations/{{destinationId}}",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "destinations",
+                    "{{destinationId}}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Categorias",
+          "item": [
+            {
+              "name": "Listar todas las categorías",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/categories",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "categories"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Obtener categoría por ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/categories/{{categoryId}}",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "categories",
+                    "{{categoryId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Crear categoría",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Ciudad\"\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/categories",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "categories"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Actualizar categoría",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Playa\"\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/categories/{{categoryId}}",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "categories",
+                    "{{categoryId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Eliminar categoría",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:9999/api/v1/categories/{{categoryId}}",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "categories",
+                    "{{categoryId}}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TravelerService",
+      "item": [
+        {
+          "name": "Viajes",
+          "item": [
+            {
+              "name": "Crear viaje",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"dafff0e9-509a-46d2-86a4-0954a0ad5f6b\",\n  \"destinationId\": \"3b3f3937-73c9-11f1-b577-424dc013a170\",\n  \"startDate\": \"2026-07-01\",\n  \"endDate\": \"2026-07-10\",\n  \"travelType\": \"Leisure\",\n  \"companions\": 2,\n  \"notes\": \"Vacaciones familiares\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:9999/api/v1/traveler/trips",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "api",
+                    "v1",
+                    "traveler",
+                    "trips"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Listar viajes por usuario",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:9999/api/v1/traveler/trips/user",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "9002",
+                  "path": [
+                    "api",
+                    "v1",
+                    "traveler",
+                    "trips",
+                    "user"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "DetallesViaje",
+          "item": [
+            {
+              "name": "Agregar detalle a viaje",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tripId\": \"071a8920-1fad-4ac9-97e3-a8ba3e9cc2de\",\n  \"detailKey\": \"Transport\",\n  \"detailValue\": \"Avión\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:9999/api/v1/traveler/trip-details",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "9002",
+                  "path": [
+                    "api",
+                    "v1",
+                    "traveler",
+                    "trip-details"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Listar detalles de un viaje",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer "
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:9999/api/v1/traveler/trip-details/071a8920-1fad-4ac9-97e3-a8ba3e9cc2de",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "9002",
+                  "path": [
+                    "api",
+                    "v1",
+                    "traveler",
+                    "trip-details",
+                    "071a8920-1fad-4ac9-97e3-a8ba3e9cc2de"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
