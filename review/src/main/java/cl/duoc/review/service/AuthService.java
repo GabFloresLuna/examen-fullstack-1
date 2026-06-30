@@ -1,7 +1,7 @@
 package cl.duoc.review.service;
 
-import cl.duoc.destination.dto.ApiResponse;
-import cl.duoc.destination.dto.UserDTO;
+import cl.duoc.review.dto.ApiResponse;
+import cl.duoc.review.dto.UserDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package cl.duoc.review.config;
 
-import cl.duoc.destination.dto.ApiResponse;
-import cl.duoc.destination.dto.UserDTO;
-import cl.duoc.destination.service.AuthService;
+import cl.duoc.review.dto.ApiResponse;
+import cl.duoc.review.dto.UserDTO;
+import cl.duoc.review.service.AuthService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
