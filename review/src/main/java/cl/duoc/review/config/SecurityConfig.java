@@ -13,7 +13,6 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     private final AuthService authService;
-1
     public SecurityConfig(AuthService authService) {
         this.authService = authService;
     }
