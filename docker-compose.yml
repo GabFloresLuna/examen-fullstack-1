@@ -51,8 +51,22 @@ services:
           resources:
             limits:
               memory: 512M
+  mysql_review:
+    image: mysql:8.0
+    container_name: mysql_review
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: review
+      MYSQL_USER: examen
+      MYSQL_PASSWORD: examen123
+    ports:
+      - "3313:3306"
+    volumes:
+      - mysql_review_data:/var/lib/mysql
+
 volumes:
   mysql_login_data:
   mysql_destination_data:
   mysql_traveler_data:
+  mysql_review_data:
   
