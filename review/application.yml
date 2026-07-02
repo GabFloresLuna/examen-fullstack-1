@@ -27,9 +27,9 @@ eureka:
 logging:
   level:
     root: INFO
-    cl.duoc.destination: DEBUG
+    cl.duoc.review: DEBUG
   file:
-    name: logs/destination-service.log
+    name: logs/review-service.log
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
     file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
